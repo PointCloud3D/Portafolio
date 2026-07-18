@@ -47,7 +47,109 @@
             gap: 10px;
             justify-items: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.8);
+            /* Fondo transparente para que se vea fondo.png */
+            background-color: transparent;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .texto {
+                width: 100%;
+            }
+            .galeria {
+                width: 100%;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="texto">
+        <h1>Mi Portafolio</h1>
+        <p>
+            Hola, soy Joshua y este es mi espacio para mostrar trabajos de
+            modelado 3D, ingeniería inversa y proyectos técnicos.
+        </p>
+        <p>
+            Con el tiempo voy a ir agregando más imágenes y proyectos.
+        </p>
+    </div>
+
+    <div class="galeria">
+        <img src="imagenes/proyecto1.png" alt="Proyecto 1">
+        <img src="imagenes/proyecto2.png" alt="Proyecto 2">
+        <img src="imagenes/proyecto3.png" alt="Proyecto 3">
+        <img src="imagenes/proyecto4.png" alt="Proyecto 4">
+        <img src="imagenes/proyecto5.png" alt="Proyecto 5">
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Portafolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-image: url("imagenes/fondo.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .texto {
+            width: 30%;
+            padding: 20px;
+            position: relative;
+            color: #fff;
+            background-image: url("imagenes/fondoportada.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .texto::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .texto h1, .texto p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .galeria {
+            width: 70%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: auto;
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            /* Fondo transparente para que se vea fondo.png */
+            background-color: transparent;
         }
 
         .galeria img {
