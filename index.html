@@ -9,7 +9,6 @@
             font-family: Arial, sans-serif;
             display: flex;
             min-height: 100vh;
-            /* Fondo general */
             background-image: url("imagenes/fondo.png");
             background-size: cover;
             background-position: center;
@@ -21,18 +20,16 @@
             padding: 20px;
             position: relative;
             color: #fff;
-            /* Fondo con imagen y sombreado */
             background-image: url("imagenes/fondoportada.png");
             background-size: cover;
             background-position: center;
         }
 
-        /* Capa de sombreado */
         .texto::before {
             content: "";
             position: absolute;
             inset: 0;
-            background-color: rgba(0, 0, 0, 0.4); /* Ajustá el 0.4 para más o menos sombra */
+            background-color: rgba(0, 0, 0, 0.4);
             z-index: 0;
         }
 
@@ -47,13 +44,18 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center;
+            align-items: flex-start;
             background-color: rgba(255, 255, 255, 0.8);
         }
 
         .galeria img {
-            max-width: 300px;
-            width: 100%;
+            max-width: 100%;
+            height: auto; /* mantiene proporción */
             border: 1px solid #ccc;
+            border-radius: 5px;
+            object-fit: contain; /* evita deformación */
+            flex: 1 1 300px; /* se adapta al espacio disponible */
         }
     </style>
 </head>
@@ -73,7 +75,6 @@
         <img src="imagenes/proyecto1.png" alt="Proyecto 1">
         <img src="imagenes/proyecto2.png" alt="Proyecto 2">
         <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
-        <img src="imagenes/proyecto3.jpg" alt="Proyecto 4">
     </div>
 </body>
 </html>
