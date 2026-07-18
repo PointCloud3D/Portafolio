@@ -9,12 +9,36 @@
             font-family: Arial, sans-serif;
             display: flex;
             min-height: 100vh;
+            /* Fondo general */
+            background-image: url("imagenes/fondo.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .texto {
             width: 30%;
             padding: 20px;
-            background-color: #f4f4f4;
+            position: relative;
+            color: #fff;
+            /* Fondo con imagen y sombreado */
+            background-image: url("imagenes/fondoportada.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Capa de sombreado */
+        .texto::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Ajustá el 0.4 para más o menos sombra */
+            z-index: 0;
+        }
+
+        .texto h1, .texto p {
+            position: relative;
+            z-index: 1;
         }
 
         .galeria {
@@ -23,7 +47,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .galeria img {
@@ -46,10 +70,10 @@
     </div>
 
     <div class="galeria">
-        <!-- Ejemplo de imágenes -->
-        <img src="imagenes/proyecto1.jpg" alt="Proyecto 1">
-        <img src="imagenes/proyecto2.jpg" alt="Proyecto 2">
+        <img src="imagenes/proyecto1.png" alt="Proyecto 1">
+        <img src="imagenes/proyecto2.png" alt="Proyecto 2">
         <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
+        <img src="imagenes/proyecto3.jpg" alt="Proyecto 4">
     </div>
 </body>
 </html>
